@@ -34,7 +34,8 @@ int obtener_vocales(string cadena)
     int contador = 0;
     for (int i = 0; i < cadena.length(); i++)
     {
-
+        letra = tolower(cadena[i]);
+        if (letra[i] == "a")
     }
 
     return contador;
