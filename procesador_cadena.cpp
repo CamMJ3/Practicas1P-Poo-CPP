@@ -34,14 +34,17 @@ int obtener_vocales(string cadena)
     int contador = 0;
     for (int i = 0; i < cadena.length(); i++)
     {
-        letra = tolower(cadena[i]);
-        if (letra[i] == "a")
+        char letra = tolower(cadena[i]);
+        if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u')
+        {
+            contador++;
+        }
     }
 
     return contador;
 }
 
-frase frase_invertida(string cadena)
+string frase_invertida(string cadena)
 {
 
 }
