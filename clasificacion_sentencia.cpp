@@ -15,9 +15,42 @@ int menu(); // Menú del programa que maneja el input (aportación) del usuario
 
 /***********************************************************************/
 
+/** 
+ * @brief Ubica la calificación del usuario en el sistema de calificación de la universidad.
+ * @details
+ * - Si la calificación es igual o mayor a 95, es "excelente" (E).
+ * - Si la calificación es igual o mayor a 85, es "muy bien" (MB).
+ * - Si la calificación es igual o mayor a 95, es "bien" (B).
+ * - Si la calificación es igual o mayor a 95, es "suficiente" (S).
+ * - Si la calificación es igual o mayor a 95, es "no acreditada" (NA).
+ */
+
 string obtener_calificacion(double calificacion)
 {
-
+    if (calificacion < 0 || calificacion > 100)
+    {
+        return "Calificación inválida. Intente de nuevo.";
+    }
+    else if (calificacion >= 95)
+    {
+        return "E";
+    }
+    else if (calificacion >= 85)
+    {
+        return "MB";
+    }
+    else if (calificacion >= 75)
+    {
+        return "B";
+    }
+    else if (calificacion >= 60)
+    {
+        return "S";
+    }
+    else
+    {
+        return "NA";
+    }
 }
 
 /***********************************************************************/
@@ -33,53 +66,14 @@ int main()
 		{
         case 1:
         {
-            double num1, num2;
-            cout <<  "\nIngrese el primer número: "; 
-            cin >> num1;
+            int calificacion;
+            cout << "\nIngrese su calificación: ";
+            cin >> calificacion;
 
-            cout <<  "\nIngrese el segundo número: "; 
-            cin >> num2;
-
-            cout << "\nLa suma de " << num1 << " + " << num2 << " es : " << sumar(num1, num2) << endl;
+            cout << "Con su calificación de " << calificacion << " obtuvo : " << obtener_calificacion(calificacion) << endl;
             break;
         }
-		case 2:
-        {
-            double num1, num2;
-            cout <<  "\nIngrese el primer número: "; 
-            cin >> num1;
-
-            cout <<  "\nIngrese el segundo número: "; 
-            cin >> num2;
-
-            cout << "\nLa resta de " << num1 << " - " << num2 << " es : " << restar(num1, num2) << endl;
-            break;
-        }
-		case 3:
-        {
-            double num1, num2;
-            cout <<  "\nIngrese el primer número: "; 
-            cin >> num1;
-
-            cout <<  "\nIngrese el segundo número: "; 
-            cin >> num2;
-
-            cout << "\nLa multiplicación de " << num1 << " * " << num2 << " es : " << multiplicar(num1, num2) << endl;
-            break;
-        }
-        case 4:
-        {
-            double num1, num2;
-            cout <<  "\nIngrese el primer número: "; 
-            cin >> num1;
-
-            cout <<  "\nIngrese el segundo número: "; 
-            cin >> num2;
-
-            cout << "\nLa división de " << num1 << " / " << num2 << " es : " << dividir(num1, num2) << endl;
-            break;
-        }
-        case 5:
+        case 2:
         {
 			cout << "\nSaliendo del programa...";
 			exit(0);
@@ -104,13 +98,12 @@ int menu()
 	{
 		cout << "\n\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ ¡ MENÚ ! -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_";
         cout << "\n\n-------> Sistema de calificación.\n";
-        cout << "1) Obtener .\n";
-		cout << "2) Restar dos números.\n";
-		cout << "3) Multiplicar dos números.\n";
-        cout << "4) Dividir dos números.\n";
-        cout << "5) Salir del programa.\n";
+        cout << "Este programa ubica tu calificación en el sistema de calificación de tu universidad. \n";
+		cout << "RECUERDA : Ingresa una calificación entre 0 y 100.\n\n";
+		cout << "1) Ingresar calificación.\n";
+        cout << "2) Salir del programa.\n";
 		cout << "\n--> Seleccione una opción: ";
 		cin >> opcion;
-	} while (opcion < 1 || opcion > 5);
+	} while (opcion < 1 || opcion > 2);
 	return opcion;
 }
