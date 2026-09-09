@@ -35,9 +35,15 @@ int obtener_vocales(string cadena)
     for (int i = 0; i < cadena.length(); i++)
     {
         char letra = tolower(cadena[i]);
+        string letra_acento = cadena.substr(i, 2);
         if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u')
         {
-            contador++;
+            contador++; // Se incrementa con letras sin acento.
+        }
+        else if (letra_acento == "á" || letra_acento == "é" || letra_acento == "í" || letra_acento == "ó" || letra_acento == "ú")
+        {
+            contador++; // Se incrementa ante letras con acento.
+            i++; // Se salta el segundo byte de la letra para evitar contarla dos veces.
         }
     }
 
