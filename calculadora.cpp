@@ -1,5 +1,7 @@
 #include <iostream>
+#include <windows.h>
 using namespace std;
+
 
 /** 
  * @file 
@@ -41,6 +43,9 @@ double dividir(double num1, double num2)
 
 int main()
 {
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
+
     while (true)
 	{
 		switch (menu())
@@ -51,20 +56,49 @@ int main()
             cout <<  "\nIngrese el primer número: "; 
             cin >> num1;
 
-            cout << "\n¡Se ha insertado el nodo correctamente!";
+            cout <<  "\nIngrese el segundo número: "; 
+            cin >> num2;
+
+            cout << "\nLa suma de " << num1 << " + " << num2 << " es : " << sumar(num1, num2) << endl;
             break;
         }
 		case 2:
         {
-            cout << "\n---> Recorrido in-orden del árbol AVL...\n";
-			break;
+            double num1, num2;
+            cout <<  "\nIngrese el primer número: "; 
+            cin >> num1;
+
+            cout <<  "\nIngrese el segundo número: "; 
+            cin >> num2;
+
+            cout << "\nLa resta de " << num1 << " - " << num2 << " es : " << restar(num1, num2) << endl;
+            break;
         }
 		case 3:
         {
-            cout << "\n---> Representación visual del árbol AVL...\n";
+            double num1, num2;
+            cout <<  "\nIngrese el primer número: "; 
+            cin >> num1;
+
+            cout <<  "\nIngrese el segundo número: "; 
+            cin >> num2;
+
+            cout << "\nLa multiplicación de " << num1 << " * " << num2 << " es : " << multiplicar(num1, num2) << endl;
             break;
         }
         case 4:
+        {
+            double num1, num2;
+            cout <<  "\nIngrese el primer número: "; 
+            cin >> num1;
+
+            cout <<  "\nIngrese el segundo número: "; 
+            cin >> num2;
+
+            cout << "\nLa división de " << num1 << " / " << num2 << " es : " << dividir(num1, num2) << endl;
+            break;
+        }
+        case 5:
         {
 			cout << "\nSaliendo del programa...";
 			exit(0);
