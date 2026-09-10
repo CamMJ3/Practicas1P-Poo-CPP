@@ -5,9 +5,9 @@ using namespace std;
 
 /** 
  * @file 
- * @brief Funciones (métodos) disponibles de la calculadora. Se utiliza un retorno de tipo double en sus
- * métodos para manejar números decimales eficientemente. Debido a que funciona a partir de dos números,
- * se establecen los parámetros "num1" y "num2".
+ * @brief Funciones (métodos) disponibles de la clase Grupo. A partir de la clase Estudiante, utiliza un vector
+ * para almacenar objetos de tipo Estudiante, es decir, es capaz de agrupar distintos estudiantes con el propósito
+ * de calcular el promedio general de todos los estudiantes.
  */
 
 class Estudiante
