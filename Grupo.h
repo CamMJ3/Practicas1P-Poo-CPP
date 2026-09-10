@@ -17,6 +17,6 @@ class Grupo
         vector<Estudiante> estudiantes; // Inicializa un vector vacío de Estudiantes.
     public:
         Grupo(); // Constructor de la clase Grupo.
-        void nuevo_estudiante(string nombre, string carrera, int promedio, int matricula, int materias_cursando); // Agrega un nuevo estudiante al grupo.
+        void nuevo_estudiante(Estudiante nuevo_estudiante); // Agrega un nuevo estudiante al grupo.
         double promedio_general(); // Calcula el promedio general de todos los estudiantes en el grupo.
 };
