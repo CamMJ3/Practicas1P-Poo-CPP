@@ -21,107 +21,54 @@ class Estudiante
     public:
         Estudiante(string nombre, string carrera, int promedio, int matricula, int materias_cursando);
         void obtener_datos();
-        bool aprobado();
+        void aprobado();
         int obtener_matricula();
+        void modificar_promedio(int calific);
 };
 
 int menu(); // Menú del programa que maneja el input (aportación) del usuario
 
 /***********************************************************************/
 
-
-
-/***********************************************************************/
-
-int main()
+Estudiante::Estudiante(string nombre, string carrera, int promedio, int matricula, int materias_cursando)
 {
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
+    this->nombre = nombre;
+    this->carrera = nombre;
+    this->promedio = promedio;
+    this->matricula = matricula;
+    this->materias_cursando = materias_cursando;
+}
 
-    while (true)
-	{
-		switch (menu())
-		{
-        case 1:
-        {
-            double num1, num2;
-            cout <<  "\nIngrese el primer número: "; 
-            cin >> num1;
+void Estudiante::obtener_datos()
+{
+    cout << "Datos del ESTUDIANTE " << nombre << " : \n";
+    cout << "--> Carrera : " << carrera << endl;
+    cout << "--> Promedio : " << promedio << endl;
+    cout << "--> Matricula : " << matricula << endl;
+    cout << "--> Número de materias cursando : " << materias_cursando << endl;
+}
 
-            cout <<  "\nIngrese el segundo número: "; 
-            cin >> num2;
-
-            cout << "\nLa suma de " << num1 << " + " << num2 << " es : " << sumar(num1, num2) << endl;
-            break;
-        }
-		case 2:
-        {
-            double num1, num2;
-            cout <<  "\nIngrese el primer número: "; 
-            cin >> num1;
-
-            cout <<  "\nIngrese el segundo número: "; 
-            cin >> num2;
-
-            cout << "\nLa resta de " << num1 << " - " << num2 << " es : " << restar(num1, num2) << endl;
-            break;
-        }
-		case 3:
-        {
-            double num1, num2;
-            cout <<  "\nIngrese el primer número: "; 
-            cin >> num1;
-
-            cout <<  "\nIngrese el segundo número: "; 
-            cin >> num2;
-
-            cout << "\nLa multiplicación de " << num1 << " * " << num2 << " es : " << multiplicar(num1, num2) << endl;
-            break;
-        }
-        case 4:
-        {
-            double num1, num2;
-            cout <<  "\nIngrese el primer número: "; 
-            cin >> num1;
-
-            cout <<  "\nIngrese el segundo número: "; 
-            cin >> num2;
-
-            cout << "\nLa división de " << num1 << " / " << num2 << " es : " << dividir(num1, num2) << endl;
-            break;
-        }
-        case 5:
-        {
-			cout << "\nSaliendo del programa...";
-			exit(0);
-			break;
-        }
-        }
+void Estudiante::aprobado()
+{
+    if (promedio >= 60)
+    {
+        cout << nombre << " está APROBADO (sin riesgo académico).";
+    }
+    else
+    {
+        cout << nombre <<" está REPROBADO (en riesgo académico).";
     }
 }
 
-/***********************************************************************/
-
-/** 
- * @brief Menú del programa que maneja el input (aportación) del usuario.
- *
- * @details Devuelve una opción a la función main().
- */
-
-int menu()
+int Estudiante::obtener_matricula()
 {
-    int opcion;
-	do
-	{
-		cout << "\n\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ ¡ MENÚ ! -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_";
-        cout << "\n\n-------> Calculadora.\n";
-        cout << "1) Sumar dos números.\n";
-		cout << "2) Restar dos números.\n";
-		cout << "3) Multiplicar dos números.\n";
-        cout << "4) Dividir dos números.\n";
-        cout << "5) Salir del programa.\n";
-		cout << "\n--> Seleccione una opción: ";
-		cin >> opcion;
-	} while (opcion < 1 || opcion > 5);
-	return opcion;
+    return matricula;
 }
+
+void Estudiante::modificar_promedio(int calific)
+{
+    promedio = calific;
+}
+
+
+/***********************************************************************/
