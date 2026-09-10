@@ -41,7 +41,7 @@ Estudiante::Estudiante(string nombre, string carrera, int promedio, int matricul
 
 void Estudiante::obtener_datos()
 {
-    cout << "Datos del ESTUDIANTE " << nombre << " : \n";
+    cout << "\nDatos del ESTUDIANTE " << nombre << " : \n";
     cout << "--> Carrera : " << carrera << endl;
     cout << "--> Promedio : " << promedio << endl;
     cout << "--> Matricula : " << matricula << endl;
@@ -52,11 +52,11 @@ void Estudiante::aprobado()
 {
     if (promedio >= 60)
     {
-        cout << nombre << " está APROBADO (sin riesgo académico).";
+        cout << nombre << " está APROBADO(A) (sin riesgo académico).\n";
     }
     else
     {
-        cout << nombre <<" está REPROBADO (en riesgo académico).";
+        cout << nombre <<" está REPROBADO(A) (en riesgo académico).\n";
     }
 }
 
@@ -72,3 +72,25 @@ void Estudiante::modificar_promedio(int calific)
 
 
 /***********************************************************************/
+
+int main()
+{
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
+
+    cout << "\n\n-------> Estudiante 1.\n\n";
+
+    Estudiante estudiante1("Samantha de la Cruz", "Ing. Civil", 98, 56887, 9);
+    estudiante1.obtener_datos();
+    estudiante1.obtener_matricula();
+    estudiante1.modificar_promedio(69);
+    estudiante1.aprobado();
+
+    cout << "\n\n-------> Estudiante 2.\n\n";
+
+    Estudiante estudiante2("Ana Maria", "Medicina", 89, 45672, 10);
+    estudiante2.aprobado();
+    estudiante2.modificar_promedio(50);
+    estudiante2.aprobado();
+    estudiante2.obtener_datos();
+}
