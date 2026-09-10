@@ -1,13 +1,18 @@
+#ifndef ESTUDIANTE_H
+#define ESTUDIANTE_H
+
 #include <iostream>
 #include <windows.h>
+
+#include "Estudiante.h"
 using namespace std;
 
 
 /** 
  * @file 
- * @brief Funciones (métodos) disponibles de la calculadora. Se utiliza un retorno de tipo double en sus
- * métodos para manejar números decimales eficientemente. Debido a que funciona a partir de dos números,
- * se establecen los parámetros "num1" y "num2".
+ * @brief Funciones (métodos) disponibles de la clase Estudiante. Cada instancia u objeto de la clase
+ * Estudiante cuenta con cinco propiedades privadas (nombre, carrera, promedio, matrícula y número de 
+ * materias cursando). Sus métodos facilitan el visualizar la información general del estudiante. 
  */
 
 class Estudiante
@@ -26,6 +31,8 @@ class Estudiante
         int obtener_matricula(); // Obtiene la matrícula del estudiante.
         void modificar_promedio(int calific); // Modifica el promedio del estudiante.
 };
+
+#endif
 
 int menu(); // Menú del programa que maneja el input (aportación) del usuario
 
