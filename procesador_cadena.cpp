@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <windows.h>
+#include <limits>
 using namespace std;
 
 
@@ -28,12 +29,7 @@ int menu(); // Menú del programa que maneja el input (aportación) del usuario
 
 int obtener_num_palabra(string cadena)
 {
-    if (cadena.empty())
-    {
-        return 0;
-    }
-
-    int contador = 1;
+    int contador = 0;
     for (int i = 0; i < cadena.length(); i++)
     {
         if (cadena[i] != ' ' && (i == 0 || cadena[i - 1] == ' ')) // Si se encuentra una letra que no es un espacio, es la primera letra de la pakabra o antes de esta se encuentra un espacio, se toma como palabra.
@@ -89,6 +85,8 @@ string frase_invertida(string cadena)
     {
         frase_inv += cadena[i];
     }
+
+    return frase_inv;
 }
 
 
@@ -105,14 +103,35 @@ int main()
 		{
         case 1:
         {
-            int calificacion;
-            cout << "\nIngrese su calificación: ";
-            cin >> calificacion;
+            string frase;
+            cout << "\nIngrese su frase: ";
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            getline(cin, frase);
 
-            cout << "Con su calificación de " << calificacion;
+            cout << "El número de letras en su frase es : " << obtener_num_palabra(frase) << endl;
             break;
         }
         case 2:
+        {
+            string frase;
+            cout << "\nIngrese su frase: ";
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            getline(cin, frase);
+
+            cout << "El número de vocales en su frase es : " << obtener_vocales(frase) << endl;
+            break;
+        }
+        case 3:
+        {
+            string frase;
+            cout << "\nIngrese su frase: ";
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            getline(cin, frase);
+
+            cout << "Su frase en orden invertido es : " << frase_invertida(frase) << endl;
+            break;
+        }
+        case 4:
         {
 			cout << "\nSaliendo del programa...";
 			exit(0);
@@ -140,9 +159,9 @@ int menu()
 		cout << "1) Contar número de palabras.\n";
 		cout << "2) Contar número de vocales (con o sin acento).\n";
 		cout << "3) Invertir la frase.\n";
-        cout << "2) Salir del programa.\n";
+        cout << "4) Salir del programa.\n";
 		cout << "\n--> Seleccione una opción: ";
 		cin >> opcion;
-	} while (opcion < 1 || opcion > 2);
+	} while (opcion < 1 || opcion > 4);
 	return opcion;
 }
