@@ -19,11 +19,12 @@ class Estudiante
         int matricula;
         int materias_cursando;
     public:
-        Estudiante(string nombre, string carrera, int promedio, int matricula, int materias_cursando);
-        void obtener_datos();
-        void aprobado();
-        int obtener_matricula();
-        void modificar_promedio(int calific);
+        Estudiante(string nombre, string carrera, int promedio, int matricula, int materias_cursando); // Constructor de la clase Estudiante. 
+        void obtener_datos(); // Obtiene la información general del estudiante.
+        int obtener_promedio(); // Obtiene el promedio del estudiante.
+        void aprobado(); // Determina si el estudiante está o no en riesgo académico.
+        int obtener_matricula(); // Obtiene la matrícula del estudiante.
+        void modificar_promedio(int calific); // Modifica el promedio del estudiante.
 };
 
 int menu(); // Menú del programa que maneja el input (aportación) del usuario
@@ -33,7 +34,7 @@ int menu(); // Menú del programa que maneja el input (aportación) del usuario
 Estudiante::Estudiante(string nombre, string carrera, int promedio, int matricula, int materias_cursando)
 {
     this->nombre = nombre;
-    this->carrera = nombre;
+    this->carrera = carrera;
     this->promedio = promedio;
     this->matricula = matricula;
     this->materias_cursando = materias_cursando;
@@ -46,6 +47,11 @@ void Estudiante::obtener_datos()
     cout << "--> Promedio : " << promedio << endl;
     cout << "--> Matricula : " << matricula << endl;
     cout << "--> Número de materias cursando : " << materias_cursando << endl;
+}
+
+int Estudiante::obtener_promedio()
+{
+    return promedio;
 }
 
 void Estudiante::aprobado()
