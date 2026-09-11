@@ -48,5 +48,5 @@ int main()
     grupo_estudiantes.nuevo_estudiante(estudiante2);
     grupo_estudiantes.nuevo_estudiante(estudiante3);
 
-    grupo_estudiantes.promedio_general();
+    cout << "El promedio general de los estudiantes es : " << grupo_estudiantes.promedio_general() << endl;
 }
