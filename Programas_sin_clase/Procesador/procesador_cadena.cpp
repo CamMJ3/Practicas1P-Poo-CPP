@@ -21,7 +21,7 @@ int menu(); // Menú del programa que maneja el input (aportación) del usuario
 /***********************************************************************/
 
 /** 
- * @brief Obtiene el número de letras en la cadena.
+ * @brief Obtiene el número de palabras en la cadena.
  * @details Si la cadena está vacía, no hay palabras (contador = 0). De lo contrario, recorre la cadena y registra
  * el número de palabras al encontrar una letra que no sea un espacio y que sea la primera letra de la palabra o que antes
  * estuviera un espacio. Mediante estas condiciones, incrementa el contador.

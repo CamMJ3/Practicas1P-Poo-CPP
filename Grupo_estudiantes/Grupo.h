@@ -4,6 +4,8 @@
 #include "Estudiante.h"
 using namespace std;
 
+// IMPORTANTE : La ejecucion de las clases Estudiante y Grupo se encuentra dentro de clase_grupo.cpp.
+
 /** 
  * @file 
  * @brief Funciones (métodos) disponibles de la clase Grupo. Puede almacenar una o más de una instancia de la clase
